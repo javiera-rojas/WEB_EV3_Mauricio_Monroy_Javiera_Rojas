@@ -76,7 +76,7 @@
       }
     </script>
     
-    <title>Evaluacion2</title>
+    <title>Evaluacion3</title>
     
   </head>
   <body>
@@ -94,78 +94,45 @@
         <li class="nav-item"><a href="#" class="nav-link text-light">Pricing</a></li>       
       </ul>
     </header>
-    <div>
-      <div class="text-center" id="tituloCont">
-        <h1>CONTÁCTATE CON NOSOTROS!</h1>
-      </div>
-      <section id="section1">
-        <article>
-          <p>Si deseas suscribirte a nuestra Newsletter, estás interesado en participar en nuestros concursos o deseas ser parte de nuestro equipo te invitamos a llenar nuestro formulario de contacto.</p>
-        </article>
-        <h5>Encontrarás nuestras oficinas en:</h5>
-        <article>
-          <p>O'Higgins 311, Pelotillehue, Chile </p>
-        </article> 
-        <h5>Teléfono:</h5>
-        <article>
-          <p>(+56) 74 1234567</p>
-        </article>
-      </section>
-      <aside id="section2">
-        <div class="text-center">
-          <form id="form" action="proceso.html" method="post" name="form">
-
-            
-
-            <label for="rut">Ingrese su RUT:</label>
-            <br>
-            <input type="text" class="input_rut" name="rut" id="rut"  placeholder="Ej. 123456789-0">
-            <br>
-            <label for="nombre">Ingrese su nombre:</label>
-            <br>
-            <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Juanito Pérez">
-            <br>
-            <label for="mail">Ingrese su correo electrónico:</label>
-            <br>
-            <input type="text" class="form-control" name="mail" id="mail">
-            <br>
-            <label for="pass1">Ingrese su contraseña:</label>
-            <br>
-            <input type="text" class="form-control" name="pass1" id="pass1">
-            <br>
-            <label for="pass2">Ingrese su constraseña nuevamente:</label>
-            <br>
-            <input type="text" class="form-control" name="pass2" id="pass2" onblur="revisarPass()">
-            <div id="msg"></div>
-            <!-- Mensajes de Verificación -->
-            <div id="error" class="alert alert-danger ocultar" role="alert">
-              Las Contraseñas no coinciden, vuelve a intentar !
+    
+    <section class="position-relative py-5 overflow-hidden">
+      <div class="d-none d-md-block position-absolute top-0 start-0 bg-primary w-75 h-100"></div>
+      <div class="d-md-none position-absolute top-0 start-0 bg-primary w-100 h-100"></div>
+      <div class="container position-relative mx-auto">
+        <div class="row align-items-center">
+          <div class="col-12 col-lg-5 mb-5">
+            <div>
+              <h2 class="display-5 fw-bold mb-4 text-white">¿No encontraste el libro que estabas buscando?</h2>
+              <p class="mb-0 text-light"><font size=4>Registrándote tendrás la opción de reservarlo con anterioridad o revisarlo en tu dispositivo. Con</font></p>
             </div>
-            <div id="ok" class="alert alert-success ocultar" role="alert">
-              Las Contraseñas coinciden ! (Procesando formulario ... )
+          </div>
+          <div class="col-12 col-lg-5 ms-auto">
+            <div class="p-5 bg-light rounded text-center">
+              <form action="#">
+                <span class="text-muted">Sign Up</span>
+                <h3 class="fw-bold mb-5">Create new account</h3>
+                <input class="form-control mb-2" type="email" placeholder="E-mail address">
+                <input class="form-control mb-2" type="password" placeholder="Password">
+                <input class="form-control mb-2" type="password" placeholder="Repeat password">
+                
+                <button class="btn btn-primary py-2 w-100">Regístrate!</button>
+              </form>
             </div>
-            <br>
-            <label for="comentarios">Ingrese sus comentarios:</label>
-            <br>
-            <textarea class="form-control" name="comentarios" id="" cols="40" rows="5"></textarea>
-            <br>
-            
-        </form>
-        <button type="button" class="btn btn-danger" disabled="true" id="btnEnviar" >Enviar</button>  
+          </div>
         </div>
-      </aside>
-    </div>
+      </div>
+    </section>
     <!-- Footer -->
-    <footer class="bg-danger text-center text-lg-start">
+    <footer class="bg-primary text-center text-lg-start">
       <!-- Copyright -->
       <div class="text-center" style="background-color: rgba(255, 255, 255, 0.5);">
-          Los Once
+          Biblioteca municipal de Titirilquén
       </div>
       <div class="text-center" style="background-color: rgba(255, 255, 255, 0.5);">
-          Teléfono: (+56) 74 1234567  
+        Teléfono: (+56) 74 1234567  
       </div>
       <div class="text-center" style="background-color: rgba(255, 255, 255, 0.5);">
-          Mail: contacto@losonce.cl
+          Mail: contacto@ilustradisimabibliotecamunicipaltitirilquen.cl
       </div>
       <!-- Copyright -->
     </footer>
