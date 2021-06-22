@@ -18,11 +18,12 @@ class Migration(migrations.Migration):
             ],
         ),
         migrations.CreateModel(
-            name='Vehiculo',
+            name='Libros',
             fields=[
-                ('patente', models.CharField(max_length=6, primary_key=True, serialize=False, verbose_name='Patente')),
-                ('marca', models.CharField(max_length=20, verbose_name='Marca vehiculo')),
-                ('modelo', models.CharField(blank=True, max_length=20, null=True, verbose_name='Modelo')),
+                ('ISBN', models.CharField(max_length=17, primary_key=True, serialize=False)),
+                ('Nombre del libro', models.CharField(max_length=20, verbose_name='')),
+                ('Autor', models.CharField(max_length=30)),
+                ('Descripción', models.CharField( max_length=200)),
                 ('categoria', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='core.categoria')),
             ],
         ),
