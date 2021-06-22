@@ -1,6 +1,8 @@
 <!doctype html>
+
 <html lang="es">
-  <head>
+
+<head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,141 +12,142 @@
     <link rel="stylesheet" href="style01.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script>
-      $(document).ready(function() {
-        //Siempre que salgamos de un campo de texto, se chequeará esta función
-        $("#form input").keyup(function() {
-          var form = $(this).parents("#form");
-          var check = checkCampos(form);
-          console.log(check);
-          if(check) {
-            $("#btnEnviar").prop("disabled", false);
-          }
-          else {
-            $("#btnEnviar").prop("disabled", true);
-          }
+        $(document).ready(function() {
+            //Siempre que salgamos de un campo de texto, se chequeará esta función
+            $("#form input").keyup(function() {
+                var form = $(this).parents("#form");
+                var check = checkCampos(form);
+                console.log(check);
+                if (check) {
+                    $("#user-data-next-button").prop("disabled", false);
+                } else {
+                    $("#user-data-next-button").prop("disabled", true);
+                }
+            });
         });
-      });
-        
-      //Función para comprobar los campos de texto
-      function checkCampos(obj) {
-        var camposRellenados = true;
-        obj.find("input").each(function() {
-          var $this = $(this);
-            if( $this.val().length <= 0 ) {
-              camposRellenados = false;
-              return false;
+
+        //Función para comprobar los campos de texto
+        function checkCampos(obj) {
+            var camposRellenados = true;
+            obj.find("input").each(function() {
+                var $this = $(this);
+                if ($this.val().length <= 0) {
+                    camposRellenados = false;
+                    return false;
+                }
+            });
+            if (camposRellenados == false) {
+                return false;
+            } else {
+                return true;
             }
-        });
-        if(camposRellenados == false) {
-          return false;
         }
-        else {
-          return true;
-        }
-      }
-    </script>  
 
-    <script>
-      function revisarPass(){
-        var pass1 = document.getElementById("pass1");
-        var pass2 = document.getElementById("pass2");
-        if (pass1.value != pass2.value) {
-          // Si las constraseñas no coinciden mostramos un mensaje
-          document.getElementById("ok").classList.add("ocultar");
-          document.getElementById("error").classList.add("mostrar");
-          return false;
-        }else{
-          document.getElementById("error").classList.remove("mostrar");
-          document.getElementById("ok").classList.remove("ocultar");
-          return true;
+        function revisarPass() {
+            var pass1 = document.getElementById("pass1");
+            var pass2 = document.getElementById("pass2");
+            if (pass1.value != pass2.value) {
+                // Si las constraseñas no coinciden mostramos un mensaje
+                document.getElementById("ok").classList.add("ocultar");
+                document.getElementById("error").classList.add("mostrar");
+                return false;
+            } else {
+                document.getElementById("error").classList.remove("mostrar");
+                document.getElementById("ok").classList.remove("ocultar");
+                return true;
+            }
         }
-      }
     </script>
-    
-    <title>Evaluacion3</title>
-    
-  </head>
-  <body>
-    <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom bg-primary">
-      <a href="index.html" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
-        <div>
-          <img src="imagenes/icono.jpg" width="40" height="45">
-          <span class="fs-4 text-light"> Biblioteca Municipal de Titirilquén</span>
-        </div>
-      </a>
 
-      <ul class="nav nav-pills" id="coloresLetrasHeader">
-        <li class="nav-item"><a href="index.html" class="nav-link active text-light" aria-current="page">Home</a></li>
-        <li class="nav-item"><a href="registroUsuario.html" class="nav-link text-light">Regístrate</a></li>
-        <li class="nav-item"><a href="#" class="nav-link text-light">Pricing</a></li>       
-      </ul>
-    </header>
-    
-    <section class="position-relative py-5 overflow-hidden">
-      <div class="d-none d-md-block position-absolute top-0 start-0 bg-primary w-75 h-100"></div>
-      <div class="d-md-none position-absolute top-0 start-0 bg-primary w-100 h-100"></div>
-      <div class="container position-relative mx-auto">
-        <div class="row align-items-center">
-          <div class="col-12 col-lg-5 mb-5">
+    <title>Evaluacion3</title>
+
+</head>
+
+<body>
+    <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom bg-primary">
+        <a href="index.html" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
             <div>
-              <h2 class="display-5 fw-bold mb-4 text-white">¿No encontraste el libro que estabas buscando?</h2>
-              <p class="mb-0 text-light"><font size=4>Registrándote tendrás la opción de reservarlo con anterioridad o revisarlo en tu dispositivo. Con</font></p>
+                <img src="imagenes/icono.jpg" width="40" height="45">
+                <span class="fs-4 text-light"> Biblioteca Municipal de Titirilquén</span>
             </div>
-          </div>
-          <div class="col-12 col-lg-5 ms-auto">
-            <div class="p-5 bg-light rounded text-center">
-              <form action="#">
-                
-                <h3 class="fw-bold mb-4">Crea tu cuenta</h3>
-                <label for="nombre">Ingrese su nombre:</label>
-                <input type="text" class="form-control mb-2" name="nombre" placeholder="Ej: Juan Carlos Bodoque">
-                <label for="mail">Ingrese su e-mail:</label>
-                <input type="text" class="form-control mb-2" name="email" placeholder="Ej: copicopielementoadjetivo@yonofui.com">
-                <label for="comentarios">Ingrese sus comentarios:</label>
-                <textarea class="form-control" name="comentarios" id="" cols="40" rows="4"></textarea>
-                <label for="pass1">Ingrese su contraseña:</label>
-                <input type="text" class="form-control mb-2" name="pass1" placeholder="Contraseña" id="pass1">
-                <label for="pass2">Vuelva a escribir su contraseña:</label>
-                <input type="text" class="form-control mb-2" name="pass2" placeholder="Contraseña" id="pass2" onblur="revisarPass()">
-                <div id="msg"></div>
-                <div id="error" class="alert alert-danger ocultar" role="alert">
-                  Las contraseñas no coinciden, vuelve a intentar!
+        </a>
+
+        <ul class="nav nav-pills" id="coloresLetrasHeader">
+            <li class="nav-item"><a href="index.html" class="nav-link active text-light" aria-current="page">Home</a></li>
+            <li class="nav-item"><a href="registroUsuario.html" class="nav-link text-light">Regístrate</a></li>
+            <li class="nav-item"><a href="#" class="nav-link text-light">Pricing</a></li>
+        </ul>
+    </header>
+
+    <section class="position-relative py-5 overflow-hidden">
+        <div class="d-none d-md-block position-absolute top-0 start-0 bg-primary w-75 h-100"></div>
+        <div class="d-md-none position-absolute top-0 start-0 bg-primary w-100 h-100"></div>
+        <div class="container position-relative mx-auto">
+            <div class="row align-items-center">
+                <div class="col-12 col-lg-5 mb-5">
+                    <div>
+                        <h2 class="display-5 fw-bold mb-4 text-white">¿No encontraste el libro que estabas buscando?</h2>
+                        <p class="mb-0 text-light">
+                            <font size=4>Registrándote tendrás la opción de reservarlo con anterioridad o revisarlo en tu dispositivo. Con</font>
+                        </p>
+                    </div>
                 </div>
-                <div id="ok" class="alert alert-success ocultar" role="alert">
-                  La contraseña está correcta
+                <div class="col-12 col-lg-5 ms-auto">
+                    <div class="p-5 bg-light rounded text-center">
+
+
+                        <h3 class="fw-bold mb-4">Crea tu cuenta</h3>
+                        <form action="userdevdata.php" method="post" id="form">
+                            <label>Ingrese su nombre:</label>
+                            <input type="text" class="form-control" name="name" placeholder="Ej: Juan Carlos Bodoque" />
+                            <label>Ingrese su e-mail:</label>
+                            <input type="text" class="form-control mb-2" name="email" placeholder="Ej: copicopielementoadjetivo@yonofui.com">
+                            <label for="comentarios">Ingrese sus comentarios:</label>
+                            <textarea class="form-control" name="comentarios" id="" cols="40" rows="4" placeholder="Ej: Apuesta a ganador para Tormenta China"></textarea>
+                            <label for="pass1">Ingrese su contraseña:</label>
+                            <input type="text" class="form-control mb-2" name="pass1" placeholder="Contraseña" id="pass1">
+                            <label for="pass2">Vuelva a escribir su contraseña:</label>
+                            <input type="text" class="form-control mb-2" name="pass2" placeholder="Contraseña" id="pass2" onblur="revisarPass()">
+                            <div id="error" class="alert alert-danger ocultar" role="alert">
+                                Las contraseñas no coinciden, vuelve a intentar!
+                            </div>
+                            <div id="ok" class="alert alert-success ocultar" role="alert">
+                                La contraseña está correcta
+                            </div>
+                            <BR></BR>
+                        </form>
+                        <button id="user-data-next-button" class="btn btn-primary py-2 w-100" disabled>Botón</button>
+
+                    </div>
                 </div>
-                
-              </form>
-              <button type="button" class="btn btn-primary py-2 w-100" disabled="true" id="btnEnviar" >Regístrate!</button>
             </div>
-          </div>
         </div>
-      </div>
     </section>
     <!-- Footer -->
     <footer class="bg-primary text-center text-lg-start">
-      <!-- Copyright -->
-      <div class="text-center" style="background-color: rgba(255, 255, 255, 0.5);">
-          Biblioteca municipal de Titirilquén
-      </div>
-      <div class="text-center" style="background-color: rgba(255, 255, 255, 0.5);">
-        Teléfono: (+56) 74 1234567  
-      </div>
-      <div class="text-center" style="background-color: rgba(255, 255, 255, 0.5);">
-          Mail: contacto@ilustradisimabibliotecamunicipaltitirilquen.cl
-      </div>
-      <!-- Copyright -->
+        <!-- Copyright -->
+        <div class="text-center" style="background-color: rgba(255, 255, 255, 0.5);">
+            Biblioteca municipal de Titirilquén
+        </div>
+        <div class="text-center" style="background-color: rgba(255, 255, 255, 0.5);">
+            Teléfono: (+56) 74 1234567
+        </div>
+        <div class="text-center" style="background-color: rgba(255, 255, 255, 0.5);">
+            Mail: contacto@ilustradisimabibliotecamunicipaltitirilquen.cl
+        </div>
+        <!-- Copyright -->
     </footer>
     <!-- Footer -->
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
-    
+
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <!--
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
     -->
-  </body>
+</body>
+
 </html>
