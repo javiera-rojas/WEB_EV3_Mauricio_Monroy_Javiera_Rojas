@@ -20,7 +20,7 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Libros',
             fields=[
-                ('ISBN', models.CharField(max_length=17, primary_key=True, serialize=False)),
+                ('ISBN', models.CharField(max_length=13, primary_key=True, serialize=False)),
                 ('Nombre del libro', models.CharField(max_length=20, verbose_name='')),
                 ('Autor', models.CharField(max_length=30)),
                 ('Descripción', models.CharField( max_length=200)),
